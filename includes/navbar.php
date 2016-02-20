@@ -11,7 +11,7 @@
       <a class="navbar-brand" href="#">Project Name</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li><a href = '#about' >About</a></li>
         <li><a href = '#search' >Search</a></li>
         <li><a href = '#profile' >Profile</a></li>        
