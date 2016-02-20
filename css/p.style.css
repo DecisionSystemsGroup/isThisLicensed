@@ -12,3 +12,23 @@ footer a:link, a:active, a:visited{
  	color: #777777;
  	text-decoration: none;
  }
+.dropzone.dz-clickable {
+    cursor: pointer;
+}
+.dropzone {
+	margin-top: 30px;
+    border: 2px dashed #6B6B6B;
+    color: #ddd;
+    background-color: #777777;
+    border-radius: 5px;
+    min-height: 150px;
+    padding: 54px 54px;
+    box-sizing: border-box;
+}
+.dropzone .dz-message {
+    font-weight: 400;
+}
+.dropzone .dz-message {
+    text-align: center;
+    margin: 2em 0;
+}
