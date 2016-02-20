@@ -6,6 +6,8 @@ body{
 }
 
 .navbar{
+	margin-bottom: 0;
+    border-bottom: 1px solid;
 	text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	background-color: #272629;
@@ -18,9 +20,11 @@ body{
 	text-align: center;
 }
 .navbar-default .navbar-nav > li > a {
+	
     color: #0dea8b;
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #FFF;
-    background-color: #111;
+    color: #0dea8b;
+    background-color: #4b4851;
+    
  }
