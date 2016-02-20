@@ -11,4 +11,13 @@
 		$success = move_uploaded_file($formObj["tmp_name"], $target_dir.$formObj["name"]);
 		return $success?$formObj["name"]:false;	//return the name on success or false on failure
 	}
+	
+	function clearTmp(){
+		$files = glob('/home/pandorian/Web/uploads/tmp/*');
+		foreach($files as $file){
+			if(is_file($file)){
+				unlink($file); 
+			}
+		}
+	}
 ?>
