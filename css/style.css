@@ -1,0 +1,26 @@
+body{
+	background-color: #414042;
+	color: #fff;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 22px;
+}
+
+.navbar{
+	text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #272629;
+	border-color: transparent;
+}
+
+.navbar .navbar-brand{
+	width: 240px;	
+	color: #0dea8b;
+	text-align: center;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #0dea8b;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #FFF;
+    background-color: #111;
+ }
