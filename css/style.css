@@ -28,3 +28,17 @@ body{
     background-color: #4b4851;
     
  }
+ footer{
+ 	font-size: 10px; 	
+ 	text-align: center;
+ 	color: #515151;
+ }
+footer a:link, a:active, a:visited{
+ 	color: #515151;
+ 	text-decoration: none; 	
+ }
+
+ footer a:hover{
+ 	color: #777777;
+ 	text-decoration: none;
+ }
