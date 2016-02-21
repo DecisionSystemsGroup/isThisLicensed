@@ -64,16 +64,13 @@
 			return $response;
 		}
 		
-		// if(  !$stmt->bind_param('isisis', $image['system_id'], $image['system'], $image['creator_id'], $image['url'], $image['license'], $image['metadata']) ){
 		if(  !$stmt->bind_param('isisis', $system_id, $system, $creator_id, $url, $license, $metadata) ){
 			$response['success'] = false;
 			$response['error'] = "Internal server error, code: stbp";
 			return $response;
 		}
 		$imgSuccess = 0;
-		echo '<pre>';
 		foreach( $images as $image ){
-			print_r($image);
 			$system_id = $image['system_id'];
 			$system = $image['system'];
 			$creator_id = $image['creator_id'];
@@ -92,5 +89,62 @@
 		$stmt->close();
 		$db->close();
 		return $imgSuccess;
+	}
+	
+	function getImages($system='all'){
+		$db = dbConnection();
+		if(is_array($db)&&isset($db['error'])){
+			return $db;
+		}
+		
+		$stmt = $db->prepare("SELECT `id`,`system_id`,`system`,`creator_id`,`url`,`license`,`metadata` FROM `images` WHERE ".($system=='all'?"1":"`system`=?"));
+		
+		if( !$stmt ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: dbp";
+			return $response;
+		}
+		if( $system!='all' ){
+			if(  !$stmt->bind_param('s', $system) ){
+				$response['success'] = false;
+				$response['error'] = "Internal server error, code: stbp";
+				return $response;
+			}
+		}
+		
+		if( !$stmt -> execute() ){
+			$stmt -> close();
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: ste";
+			return $response;
+		}
+		
+		$stmt->store_result();
+		
+		if( !$stmt -> bind_result($id, $system_id, $system, $creator_id, $url, $license, $metadata) ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: stbr";
+		}
+		
+		$response['images'] = array();
+		$response['lenght'] = $stmt->num_rows();
+		$image = array();
+		
+		while($stmt->fetch()){
+			$image['id'] = $id;
+			$image['system_id'] = $system_id;
+			$image['system'] = $system;
+			$image['creator_id'] = $creator_id;
+			$image['url'] = $url;
+			$image['license'] = $license;
+			$image['metadata'] = $metadata;
+			
+			$response['images'][] = $image;
+		}
+		
+		$stmt->close();
+		$db->close();
+		
+		return $response;
 	}
 ?>
