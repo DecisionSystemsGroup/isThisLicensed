@@ -15,15 +15,42 @@ footer a:link, footer a:active, footer a:visited{
  	color: #777777;
  	text-decoration: none;
  }
+.get-image{
+    margin-top: 15px;
+ }
+.get-image .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: #272629;
+    color:#555;
+}
+.get-image .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border: 0px;
+    border-bottom: 2px solid #272629;
+}
+.get-image .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus{
+    color: #555;
+}
+.get-image .nav-tabs {
+    border-bottom: 1px solid #333;
+}
+.get-image .active {
+    border-bottom: 0px;
+}
 .dropzone.dz-clickable {
     cursor: pointer;
 }
+.get-image #url-input form{
+    padding: 25px 40px;
+}
+.get-image .alert{
+    margin: 20px;
+}
 .dropzone {
-	margin-top: 30px;
-    border: 2px dashed #6B6B6B;
-    color: #ddd;
-    background-color: #777777;
-    border-radius: 5px;
+    #border: 2px dashed #444;
+    border: 0px;
+    min-height: 300px;
+    color: #555;
+    background-color: #272629;
+    border-radius: 0px;
     min-height: 50px;
     padding: 54px 54px;
     box-sizing: border-box;
@@ -46,6 +73,11 @@ footer a:link, footer a:active, footer a:visited{
 .dropzone .dz-preview .dz-image{
 	border-radius: 0px;
 }
+#url-input{
+    min-height: 300px;
+    background-color: #272629;
+    color: #ccc;
+}
 #info{
     margin-top: 30px;
     font-size: 14px;
@@ -56,4 +88,42 @@ footer a:link, footer a:active, footer a:visited{
 .navbar-brand img{
     height: 42px;
     margin-top: -12px;
+}
+.form-icon{
+    width: 100%;
+}
+.header{
+    color: #ddd;
+    padding: 10px 20px;
+}
+.header h1{
+    color: #ddd;
+}
+#get-results{
+    padding: 20px;
+    background-color: rgba(200,200,200, 0.5);
+}
+#get-results .title, #get-results .license{
+    text-align: center;
+    padding: 5px;
+    background-color: #272629;
+    color:#ccc;
+    border-bottom: 1px solid #333;
+}
+#get-results .btn{
+    width:100%;
+}
+#get-results .btn-default{
+    border: 0px;
+    border-radius: 0px;
+}
+#get-loader i{
+    margin-left: auto;
+    margin-right: auto;
+}
+#get-loader{
+    padding: 150px 20px;
+}
+.dropdown-menu img{
+    height:30px;
 }
