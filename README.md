@@ -8,7 +8,7 @@ Furthermore, content creators can import their images directly through their fli
 
 The DSG team
 --------
-* [Kounas Theodore](#)
+* [Kounas Theodore](https://linkedin.com/in/theodore-kounas-9b80b3111)
 * [Lilis Athanasios](#)
 * [Oikonomidis Stavros](#)
 * [Prantalos John](https://www.linkedin.com/in/johnprantalos)
