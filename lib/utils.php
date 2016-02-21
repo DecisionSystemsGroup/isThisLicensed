@@ -1,5 +1,6 @@
 <?php
 	require "./lib/ext/image.compare.class.php";
+	require "./lib/credentials.php";
 	function uploadImage($formObj){
 		$fileType = pathinfo($formObj["name"],PATHINFO_EXTENSION);
 		$target_dir = "./uploads/tmp/";
@@ -38,4 +39,14 @@
 		return $hammeringDistance<11?true:false;
 	}
 	
+	function dbConnection(){
+		global $DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME;
+		$db = @new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
+		if (mysqli_connect_errno()){
+			$response['error'] = "Connection to the database failed: ". mysqli_connect_errno();
+			return  $response;
+		}
+		else
+			return $db;
+	}
 ?>
