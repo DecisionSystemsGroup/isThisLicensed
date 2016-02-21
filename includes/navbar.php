@@ -12,7 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href = "about.php" >About</a></li>
+        <li><a href = "about.php" >Licenses</a></li>
         <li><a href = "import.php" >Import</a></li>        
       </ul>
     </div>
