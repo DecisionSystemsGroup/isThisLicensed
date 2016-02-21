@@ -29,6 +29,7 @@
 					'system'=>'flickr',
 					'system_creator_id'=>$gall['photos']['photo'][$i]['owner'],
 					'image_title'=>$gall['photos']['photo'][$i]['title'],
+					'license'=>$gall['photos']['photo'][$i]['license'],
 					'url'=>$url,
 					'metadata'=>getImageMetadata($url)
 					);
