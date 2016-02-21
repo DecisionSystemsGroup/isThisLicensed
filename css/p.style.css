@@ -4,7 +4,7 @@ footer{
  	text-align: center;
  	color: #515151;
  }
-footer a:link, a:active, a:visited{
+footer a:link, footer a:active, footer a:visited{
  	color: #515151;
  	text-decoration: none; 	
  }
@@ -41,12 +41,10 @@ footer a:link, a:active, a:visited{
 	margin-left: auto;
 	margin-right: auto;
 }
-a:link, a:active, a:visited{
- 	color: #ddd;
- 	text-decoration: none; 	
- }
-
-a:hover{
- 	color: #fff;
- 	text-decoration: none;
- }
+.dropzone .dz-preview .dz-image{
+	border-radius: 0px;
+}
+#info{
+    margin-top: 30px;
+    font-size: 14px;
+}
