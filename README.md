@@ -21,3 +21,4 @@ The DSG team
 * [jQuery](https://jquery.com/)
 * [DropzoneJS](http://www.dropzonejs.com/)
 * [Image similarity](http://www.phpclasses.org/package/8255-PHP-Compare-two-images-to-find-if-they-are-similar.html)
+* [phpFlickr](https://github.com/dan-coulter/phpflickr)
