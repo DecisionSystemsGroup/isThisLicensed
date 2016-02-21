@@ -1,9 +1,10 @@
 <?php
+	require "./lib/ext/image.compare.class.php";
 	function uploadImage($formObj){
 		$fileType = pathinfo($formObj["name"],PATHINFO_EXTENSION);
 		$target_dir = "./uploads/tmp/";
 		//check file type
-		if($fileType!="png" && $fileType!="jpg")
+		if($fileType!="png" && $fileType!="jpg" && $fileType!="jpeg")
 			return false;
 		//check file size
 		if($formObj["size"] > 5000000)
@@ -19,5 +20,10 @@
 				unlink($file); 
 			}
 		}
+	}
+	
+	function getImageMetadata($filename){
+		$class = new compareImages;
+		return implode($class->getBits($filename));
 	}
 ?>
