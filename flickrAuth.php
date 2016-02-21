@@ -7,7 +7,9 @@
         $f->auth($permissions, false);
     }
 	else {
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		$f->auth_getToken($_GET['frob']);
 		$_SESSION['flickr_user_token'] = $f->parsed_response['auth']['token']['_content'];
 		$_SESSION['nsid'] = $f->parsed_response['auth']['user']['nsid'];

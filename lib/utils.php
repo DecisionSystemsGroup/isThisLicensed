@@ -96,7 +96,7 @@
 			return $db;
 		}
 		
-		$stmt = $db->prepare("INSERT INTO `images`(`system_id`, `system`, `system_creator_id`, `url`, `license`, `metadata`) VALUES (?, ?, ?, ?, ?, ?)");
+		$stmt = $db->prepare("INSERT INTO `images`(`system_id`, `system`, `image_title`, `system_creator_id`, `url`, `license`, `metadata`) VALUES (?, ?, ?, ?, ?, ?, ?)");
 		
 		if( !$stmt ){
 			$response['success'] = false;
@@ -104,7 +104,7 @@
 			return $response;
 		}
 		
-		if(  !$stmt->bind_param('isssis', $system_id, $system, $system_creator_id, $url, $license, $metadata) ){
+		if(  !$stmt->bind_param('issssis', $system_id, $system, $image_title, $system_creator_id, $url, $license, $metadata) ){
 			$response['success'] = false;
 			$response['error'] = "Internal server error, code: stbp";
 			return $response;
@@ -114,6 +114,7 @@
 			$system_id = $image['system_id'];
 			$system = $image['system'];
 			$system_creator_id = $image['system_creator_id'];
+			$image_title = $image['image_title'];
 			$url = $image['url'];
 			$license = isset($image['license'])?$image['license']:$defaultLicense;
 			$metadata = $image['metadata'];
@@ -137,7 +138,7 @@
 			return $db;
 		}
 		
-		$stmt = $db->prepare("SELECT `id`,`system_id`,`system`,`system_creator_id`,`url`,`license`,`metadata` FROM `images` WHERE ".($system=='all'?"1":"`system`=?"));
+		$stmt = $db->prepare("SELECT `id`,`system_id`,`system`, `image_title`, `system_creator_id`,`url`,`license`,`metadata` FROM `images` WHERE ".($system=='all'?"1":"`system`=?"));
 		
 		if( !$stmt ){
 			$response['success'] = false;
@@ -161,7 +162,7 @@
 		
 		$stmt->store_result();
 		
-		if( !$stmt -> bind_result($id, $system_id, $system, $system_creator_id, $url, $license, $metadata) ){
+		if( !$stmt -> bind_result($id, $system_id, $system, $image_title, $system_creator_id, $url, $license, $metadata) ){
 			$response['success'] = false;
 			$response['error'] = "Internal server error, code: stbr";
 		}
@@ -174,6 +175,7 @@
 			$image['id'] = $id;
 			$image['system_id'] = $system_id;
 			$image['system'] = $system;
+			$image['image_title'] = $image_title;
 			$image['system_creator_id'] = $system_creator_id;
 			$image['url'] = $url;
 			$image['license'] = $license;
