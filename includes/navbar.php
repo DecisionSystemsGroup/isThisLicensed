@@ -13,6 +13,14 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href = "about.php" >Licenses</a></li>
+		<?php
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			if(isset($_SESSION['flickr_user_token'])&&isset($_SESSION['nsid'])){
+				echo "<li><a href = \"dashboard.php\" >Dashboard</a></li>";
+			}
+		?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Import <span class="caret"></span></a>
           <ul class="dropdown-menu">
