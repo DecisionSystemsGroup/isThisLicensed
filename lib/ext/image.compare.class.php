@@ -124,6 +124,23 @@ class compareImages
 		  
 		return $hammeringDistance;
 	}
+	
+	public function getBits($a){
+		/*custom function. returns an array with the image's bit values */
+		$i1 = $this->createImage($a);
+		
+		if(!$i1){return false;}
+		
+		$i1 = $this->resizeImage($i1,$a);
+		
+		imagefilter($i1, IMG_FILTER_GRAYSCALE);
+		
+		$colorMean1 = $this->colorMeanValue($i1);
+		
+		$bits1 = $this->bits($colorMean1);
+		
+		return $bits1;
+	}
 }
   
 ?>
