@@ -43,8 +43,7 @@
 	function testNewImage($obj){	//obj can be a url or a form file object
 		$response = array();
 		$response['success'] = true;
-
-		if(strpos($obj, 'http') === false){	//check if the file is given as an object and not as a url
+		if(is_array($obj) || strpos($obj, 'http') === false){	//check if the file is given as an object and not as a url
 			$obj = uploadImage($obj);	//write the image at uploads/tmp/ and get the filename
 			if( $obj===false ){
 				$response['success'] = false;
