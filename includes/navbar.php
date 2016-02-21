@@ -8,13 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project Name</a>
+      <a class="navbar-brand" href="index.php">Project Name</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href = '#about' >About</a></li>
-        <li><a href = '#search' >Search</a></li>
-        <li><a href = '#profile' >Profile</a></li>        
+        <li><a href = "about.php" >About</a></li>
+        <li><a href = "import.php" >Import</a></li>        
       </ul>
     </div>
   </div><!-- /.container-fluid -->
