@@ -25,24 +25,59 @@
 	
 	function getImageMetadata($filename){
 		$class = new compareImages;
-		return implode($class->getBits($filename));
+		$bits = $class->getBits($filename);
+		return ($bits===false)?false:implode($bits);
 	}
 	
 	function compareImagesArrays($a, $b){
 		$hammeringDistance = 0;
 		
 		for($i=0;$i<64;$i++){
-			if($bits1[$i] != $bits2[$i]){
+			if($a[$i] != $b[$i]){
 				$hammeringDistance++;
 			}
 		}
 		return $hammeringDistance<11?true:false;
 	}
 	
+	function testNewImage($formObj){
+		$response = array();
+		$response['success'] = true;
+		$fn = uploadImage($formObj);	//write the image at uploads/tmp/ and get the filename
+		if( $fn===false ){
+			$response['success'] = false;
+			$response['error'] = 'Could not write image to disk';
+			return $response;
+		}
+		
+		$meta = getImageMetadata('./uploads/tmp/'.$fn);	//calculate image's metadata
+		if( $meta===false ){
+			$response['success'] = false;
+			$response['error'] = 'Could not compute metadata';
+			return $response;
+		}
+		
+		$images = getImages();	//retrieve images' data
+		if( isset($response['error']) ){
+			$response['success'] = false;
+			$response['error'] = 'Could not retrieve stored images\' data';
+			return $response;
+		}
+		$response['hits'] = array();
+		foreach($images['images'] as $img){
+			if( compareImagesArrays($meta, $img['metadata']) ){
+				$response['hits'][] = $img;
+			}
+		}
+		
+		return $response;
+	}
+	
 	function dbConnection(){
 		global $DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME;
 		$db = @new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 		if (mysqli_connect_errno()){
+			$response['success'] = false;
 			$response['error'] = "Connection to the database failed: ". mysqli_connect_errno();
 			return  $response;
 		}
