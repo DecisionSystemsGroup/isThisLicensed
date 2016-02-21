@@ -26,4 +26,16 @@
 		$class = new compareImages;
 		return implode($class->getBits($filename));
 	}
+	
+	function compareImagesArrays($a, $b){
+		$hammeringDistance = 0;
+		
+		for($i=0;$i<64;$i++){
+			if($bits1[$i] != $bits2[$i]){
+				$hammeringDistance++;
+			}
+		}
+		return $hammeringDistance<11?true:false;
+	}
+	
 ?>
