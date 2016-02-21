@@ -1,4 +1,6 @@
 footer{
+    border-top: 2px solid #646464;
+    padding-top: 10px;
 	margin-top: 30px;
  	font-size: 10px; 	
  	text-align: center;
@@ -46,5 +48,8 @@ footer a:link, footer a:active, footer a:visited{
 }
 #info{
     margin-top: 30px;
+    font-size: 14px;
+}
+.alert{
     font-size: 14px;
 }

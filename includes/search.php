@@ -8,12 +8,19 @@
 		<div id="dropzone">
 			<form action="upload.php" method="post" class="dropzone" id="image-upload"></form>	
 		</div>
-		<h3>or enter an image URL below</h3>	
+		<h3>or enter an image URL below</h3>
+		<div class="alert alert-info alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<strong>Notice:</strong> Make sure you include http:// or https://. If you do not, http:// is added automatically. <br />
+			<strong>Supported image files:</strong> jpg, jpeg and png.
+		</div>	
 		<div id="url-input">
 			<form class="form-inline" action="upload.php" method="post">
 				<div class="form-group">
 			    	<div class="input-group">
-				    	<input type="text" class="form-control" name="image-url" id="image-url" placeholder="e.g. http://example.com/my-image" size="40"/>
+				    	<input type="text" class="form-control" name="image-url" id="image-url" placeholder="e.g. http://example.com/my-image.jpg" size="40"/>
 			    		<span class="hidden" aria-hidden="true"></span>
 			    	</div>
 			  	</div>
