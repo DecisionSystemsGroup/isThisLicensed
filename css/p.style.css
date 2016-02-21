@@ -1,4 +1,5 @@
 footer{
+	margin-top: 30px;
  	font-size: 10px; 	
  	text-align: center;
  	color: #515151;
@@ -21,7 +22,7 @@ footer a:link, a:active, a:visited{
     color: #ddd;
     background-color: #777777;
     border-radius: 5px;
-    min-height: 150px;
+    min-height: 50px;
     padding: 54px 54px;
     box-sizing: border-box;
 }
@@ -32,3 +33,20 @@ footer a:link, a:active, a:visited{
     text-align: center;
     margin: 2em 0;
 }
+.dropzone label{
+	text-align: center;
+}
+.dropzone .form-group{
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+a:link, a:active, a:visited{
+ 	color: #ddd;
+ 	text-decoration: none; 	
+ }
+
+a:hover{
+ 	color: #fff;
+ 	text-decoration: none;
+ }
