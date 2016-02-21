@@ -49,4 +49,48 @@
 		else
 			return $db;
 	}
+	
+	function insertImages($images, $defaultLicense=7){
+		$db = dbConnection();
+		if(is_array($db)&&isset($db['error'])){
+			return $db;
+		}
+		
+		$stmt = $db->prepare("INSERT INTO `images`(`system_id`, `system`, `creator_id`, `url`, `license`, `metadata`) VALUES (?, ?, ?, ?, ?, ?)");
+		
+		if( !$stmt ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: dbp";
+			return $response;
+		}
+		
+		// if(  !$stmt->bind_param('isisis', $image['system_id'], $image['system'], $image['creator_id'], $image['url'], $image['license'], $image['metadata']) ){
+		if(  !$stmt->bind_param('isisis', $system_id, $system, $creator_id, $url, $license, $metadata) ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: stbp";
+			return $response;
+		}
+		$imgSuccess = 0;
+		echo '<pre>';
+		foreach( $images as $image ){
+			print_r($image);
+			$system_id = $image['system_id'];
+			$system = $image['system'];
+			$creator_id = $image['creator_id'];
+			$url = $image['url'];
+			$license = isset($image['license'])?$image['license']:$defaultLicense;
+			$metadata = $image['metadata'];
+			
+			if( $stmt->execute() ){
+				$imgSuccess++;
+			}
+			else{
+				printf("Error: %s.\n", $stmt->error);
+			}
+		}
+		
+		$stmt->close();
+		$db->close();
+		return $imgSuccess;
+	}
 ?>
