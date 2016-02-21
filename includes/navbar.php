@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -13,7 +13,12 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href = "about.php" >Licenses</a></li>
-        <li><a href = "import.php" >Import</a></li>        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Import <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><img src="img/fr.png">via Flickr</a></li>
+          </ul>
+        </li>       
       </ul>
     </div>
   </div><!-- /.container-fluid -->
