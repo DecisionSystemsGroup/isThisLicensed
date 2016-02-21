@@ -40,17 +40,20 @@
 		return $hammeringDistance<11?true:false;
 	}
 	
-	function testNewImage($formObj){
+	function testNewImage($obj){	//obj can be a url or a form file object
 		$response = array();
 		$response['success'] = true;
-		$fn = uploadImage($formObj);	//write the image at uploads/tmp/ and get the filename
-		if( $fn===false ){
-			$response['success'] = false;
-			$response['error'] = 'Could not write image to disk';
-			return $response;
+
+		if(strpos($obj, 'http') === false){	//check if the file is given as an object and not as a url
+			$obj = uploadImage($obj);	//write the image at uploads/tmp/ and get the filename
+			if( $obj===false ){
+				$response['success'] = false;
+				$response['error'] = 'Could not write image to disk';
+				return $response;
+			}
+			$obj = './uploads/tmp/'.$obj;
 		}
-		
-		$meta = getImageMetadata('./uploads/tmp/'.$fn);	//calculate image's metadata
+		$meta = getImageMetadata($obj);	//calculate image's metadata
 		if( $meta===false ){
 			$response['success'] = false;
 			$response['error'] = 'Could not compute metadata';
