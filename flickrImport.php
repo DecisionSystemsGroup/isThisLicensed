@@ -15,7 +15,13 @@
 	
 	$num= count($gall['photos']['photo']);
 	$imgs=array();
+	$limit = 101;
+	$limitReached = false;
 	for($i=0; $i<$num; $i++){
+		if($limit==$i){
+			$limitReached = true;
+			break;
+		}
 		$url= 'https://farm'.$gall['photos']['photo'][$i]['farm'].'.staticflickr.com/'.$gall['photos']['photo'][$i]['server'].'/'.$gall['photos']['photo'][$i]['id'].'_'.$gall['photos']['photo'][$i]['originalsecret'].'_o.'.$gall['photos']['photo'][$i]['originalformat'];
 	
 
@@ -30,6 +36,17 @@
 	}
 	
 	$res = insertImages($imgs);
-	$response = array("success"=>$res?'true':'false', "total"=>count($imgs), "imported"=>$res?$res:0);
+	if( is_array($res) && !$res['success'] ){
+		$response = array();
+		$response["success"] = 'false'; 
+		$response["error"] = $res["error"]; 
+	}
+	else{
+		$response = array(	"success"=>$res?'true':'false',
+							"total"=>$num,
+							"imported"=>$res?$res:0,
+							"error"=>($limitReached?"Image limit per user: $limit":false)
+						);
+	}
 	echo json_encode($response);
 ?>
