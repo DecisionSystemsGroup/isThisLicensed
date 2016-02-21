@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8" />
-	<title>Project Name | DSG on hack.summit() virtual hackathlon</title>
+	<title>isThisLicensed? | DSG on hack.summit() virtual hackathlon</title>
 
 	<!-- Vendor CSS -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
