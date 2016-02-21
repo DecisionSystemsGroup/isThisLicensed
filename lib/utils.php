@@ -109,8 +109,16 @@
 			$response['error'] = "Internal server error, code: stbp";
 			return $response;
 		}
+		$storedUserImages = getImagesByUserId($images[0]['system_creator_id'])['images'];	//create an array with the  system_ids of the stored images by this user in order to prevent duplicate entries.
+		$imagesIds = array();
+		foreach($storedUserImages as $item){
+			$imagesIds[] = $item['system_id'];
+		}
 		$imgSuccess = 0;
 		foreach( $images as $image ){
+			if( in_array($image['system_id'], $imagesIds) ){
+				continue;
+			}
 			$system_id = $image['system_id'];
 			$system = $image['system'];
 			$system_creator_id = $image['system_creator_id'];
