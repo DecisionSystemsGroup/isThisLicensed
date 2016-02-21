@@ -29,7 +29,7 @@
 					<form class="form-inline" action="upload.php" method="post">
 						<div class="form-group">
 					    	<div class="input-group">
-						    	<input  data-toggle="tooltip" data-placement="left" title="Tooltip on left" type="text" class="form-control" name="image-url" id="image-url" placeholder="e.g. http://example.com/my-image.jpg" size="40"/>
+						    	<input  data-toggle="tooltip" data-placement="left" title="Tooltip on left" type="text" class="form-control" name="image-url" id="image-url" placeholder="e.g. http://example.com/my-image.jpg" size="40" required />
 					    		<span class="hidden" aria-hidden="true"></span>
 					    	</div>
 					  	</div>
@@ -55,8 +55,8 @@
 
 		<div id="get-results">
 			<div class="row">
-				<h1>Possible Sources</h1>
-			  <div class="col-md-4">
+				<h1 text-align="center">Possible Sources</h1>
+			  <!--div class="col-md-4">
 			    <a href="#" class="thumbnail">
 			      <img src="http://169.45.235.85/uploads/Courses.png" alt="">
 			    </a>			    
@@ -79,7 +79,7 @@
 			    <div class="title">Title</div>
 			    <div class="license"><a href=""><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" /></a></div>
 			    <button class="btn btn-default btn-block">Original Location</button>
-			  </div>
+			  </div-->
 			</div>
 		</div>
 		
