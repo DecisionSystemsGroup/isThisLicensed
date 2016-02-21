@@ -9,12 +9,25 @@ h1{
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 700;
     letter-spacing: 1px;
+}
 
+h3{
+	color: #00B064;
+	text-decoration-style: bold;
+}
+
+ a:link {
+    text-decoration-style: bold;
+    color: #00B064;
+}
+a:visited{
+    text-decoration-style: bold;
+    color: #0cae50;
 
 }
-h3{
-	color: #0dea8b;
-	text-decoration-style: bold;
+a:active{
+    text-decoration-style: bold;
+    color: #00B064;
 }
 
 .navbar{
@@ -28,15 +41,15 @@ h3{
 
 .navbar .navbar-brand{
 	width: 240px;	
-	color: #0dea8b;
+	color: #00B064;
 	text-align: center;
 }
 .navbar-default .navbar-nav > li > a {
 	
-    color: #0dea8b;
+    color: #00B064;
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #0dea8b;
+    color: #00B064;
     background-color: #4b4851;
     
  }
@@ -49,17 +62,17 @@ h3{
 }
 
 .btn-default {
-    border: 1px solid #0dea8b;
-    color: #0dea8b;
+    border: 1px solid #00B064;
+    color: #00B064;
     background-color: #272629;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #0dea8b;
+    border: 1px solid #00B064;
     outline: 0;
     color: #fff;
-    background-color: #0dea8b;
+    background-color: #00B064;
 }
 
 div.img {
@@ -70,7 +83,7 @@ div.img {
 }
 
 div.img:hover {
-    border: 3px solid #0dea8b;
+    border: 3px solid #00B064;
 }
 
 div.img img {
@@ -81,4 +94,21 @@ div.img img {
 div.desc {
     padding: 15px;
     text-align: center;
+}
+footer img{
+    width: 45px;
+    height: 45px;
+}
+.panel {
+    border-color: #656169;
+    background-color: transparent;
+}
+.panel-title{
+    background-color: #272629;
+}
+.panel-group{
+    background-color: #323036;
+}
+.panel-default > .panel-heading{
+    background-color: #272629;
 }
