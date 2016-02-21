@@ -189,4 +189,62 @@
 		
 		return $response;
 	}
+	
+	function getImagesByUserId($system_creator_id='all'){
+		$db = dbConnection();
+		if(is_array($db)&&isset($db['error'])){
+			return $db;
+		}
+		
+		$stmt = $db->prepare("SELECT `id`,`system_id`,`system`, `image_title`, `system_creator_id`,`url`,`license`,`metadata` FROM `images` WHERE ".($system_creator_id=='all'?"1":"`system_creator_id`=?"));
+		
+		if( !$stmt ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: dbp";
+			return $response;
+		}
+		if( $system_creator_id!='all' ){
+			if(  !$stmt->bind_param('s', $system_creator_id) ){
+				$response['success'] = false;
+				$response['error'] = "Internal server error, code: stbp";
+				return $response;
+			}
+		}
+		
+		if( !$stmt -> execute() ){
+			$stmt -> close();
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: ste";
+			return $response;
+		}
+		
+		$stmt->store_result();
+		
+		if( !$stmt -> bind_result($id, $system_id, $system, $image_title, $system_creator_id, $url, $license, $metadata) ){
+			$response['success'] = false;
+			$response['error'] = "Internal server error, code: stbr";
+		}
+		
+		$response['images'] = array();
+		$response['lenght'] = $stmt->num_rows();
+		$image = array();
+		
+		while($stmt->fetch()){
+			$image['id'] = $id;
+			$image['system_id'] = $system_id;
+			$image['system'] = $system;
+			$image['image_title'] = $image_title;
+			$image['system_creator_id'] = $system_creator_id;
+			$image['url'] = $url;
+			$image['license'] = $license;
+			$image['metadata'] = $metadata;
+			
+			$response['images'][] = $image;
+		}
+		
+		$stmt->close();
+		$db->close();
+		
+		return $response;
+	}
 ?>
