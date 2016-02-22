@@ -1,15 +1,24 @@
 footer{
-    border-top: 2px solid #646464;
+    background-color: rgba(33,33,33,0.2);
     padding-top: 10px;
 	margin-top: 30px;
  	font-size: 10px; 	
  	text-align: center;
- 	color: #515151;
+ 	color: #6D6D6D;
  }
 footer a:link, footer a:active, footer a:visited{
- 	color: #515151;
+ 	color: #6D6D6D;
  	text-decoration: none; 	
  }
+footer img{
+    display:block;;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.05;
+}
+footer img:hover{
+    opacity: 0.3;
+}
 
  footer a:hover{
  	color: #777777;
@@ -35,7 +44,7 @@ footer a:link, footer a:active, footer a:visited{
 .get-image .active {
     border-bottom: 0px;
 }
-.dropzone.dz-clickable {
+#image-upload.dz-clickable {
     cursor: pointer;
 }
 .get-image #url-input form{
@@ -45,7 +54,7 @@ footer a:link, footer a:active, footer a:visited{
     margin: 20px;
 }
 
-.dropzone {
+#image-upload {
     #border: 2px dashed #444;
     border: 0px;
     min-height: 300px;
@@ -56,22 +65,22 @@ footer a:link, footer a:active, footer a:visited{
     padding: 54px 54px;
     box-sizing: border-box;
 }
-.dropzone .dz-message {
+#image-upload .dz-message {
     font-weight: 400;
 }
-.dropzone .dz-message {
+#image-upload .dz-message {
     text-align: center;
     margin: 2em 0;
 }
-.dropzone label{
+#image-upload label{
 	text-align: center;
 }
-.dropzone .form-group{
+#image-upload .form-group{
 	width:80%;
 	margin-left: auto;
 	margin-right: auto;
 }
-.dropzone .dz-preview .dz-image{
+#image-upload .dz-preview .dz-image{
 	border-radius: 0px;
 }
 #url-input{
