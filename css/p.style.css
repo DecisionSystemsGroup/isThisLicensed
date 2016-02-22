@@ -130,3 +130,17 @@ footer a:link, footer a:active, footer a:visited{
     background-color: #272629;
     height:30px;
 }
+#dashboard-results .thumbnail{
+    background-color: #272629;
+    border: 0px;
+    border-radius: 0px;
+}
+#dashboard-results .thumbnail img{    
+    height: 175px;
+}
+#dashboard-results .title{
+    margin-top: -20px;
+}
+#dashboard-results .col-md-4{
+    margin-bottom: 20px;
+}
