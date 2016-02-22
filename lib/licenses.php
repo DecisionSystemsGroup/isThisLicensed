@@ -1,5 +1,6 @@
 <?php
-	$licenses = array(	0=>["type"=>"All Rights Reserved", "img"=>"http://169.45.235.85/img/copy.png"],
+	$licenses = array(	
+					0=>["type"=>"All Rights Reserved", "img"=>"http://169.45.235.85/img/copy.png", "url"=> "https://en.wikipedia.org/wiki/Copyright"],
 					1=>["type"=>"Attribution-NonCommercial-ShareAlike License", "url"=>"http://creativecommons.org/licenses/by-nc-sa/2.0/", "img"=>"https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"],
 					2=>["type"=>"Attribution-NonCommercial License", "url"=>"http://creativecommons.org/licenses/by-nc/2.0/", "img"=>"https://licensebuttons.net/l/by-nc/3.0/88x31.png"],
 					3=>["type"=>"Attribution-NonCommercial-NoDerivs License", "url"=>"http://creativecommons.org/licenses/by-nc-nd/2.0/", "img"=>"https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png"],
