@@ -16,8 +16,57 @@
 			$images = getImagesByUserId($_SESSION['nsid']);
 		?>
 		<div class="container">
-			<div class="row">		
-			<div id="get-results">
+			<div class="row">
+			<div id="dashboard-results">
+					<?php
+						if(isset($_SESSION['importReturn'])){
+							$importReturn = json_decode($_SESSION['importReturn']);
+					?>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+					<?php
+							if($importReturn->success&&$importReturn->imported==$importReturn->total){
+					?>
+						<div class="alert alert-success alert-dismissible fade in" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>Success!</strong>
+							The import was successful! (<?php echo $importReturn->imported.'/'.$importReturn->total; ?>)
+						</div>
+					<?php
+							}
+							else if($importReturn->success&&$importReturn->imported<$importReturn->total){
+					?>
+						<div class="alert alert-warning alert-dismissible fade in" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>Success!</strong>
+							The import was successful! (<?php echo $importReturn->imported.'/'.$importReturn->total; ?>)
+							<br>
+							Some or all of the images were allready indexed.
+						</div>
+					<?php
+							}
+							else{
+					?>
+						<div class="alert alert-error alert-dismissible fade in" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>Failure!</strong>
+							The import was unsuccessful! (<?php echo $importReturn->error; ?>)
+						</div>
+					<?php
+							}
+							unset($_SESSION['importReturn']);
+					?>
+					</div>				
+				</div>	
+					<?php
+						}
+					?>			
 				<div class="row">
 					<h1 align = "center" >My Items</h1>
 					<?php

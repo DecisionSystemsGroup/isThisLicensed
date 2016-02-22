@@ -49,5 +49,7 @@
 							"error"=>($limitReached?"Image limit per user: $limit":false)
 						);
 	}
-	echo json_encode($response);
+	$_SESSION['importReturn'] = json_encode($response);
+	header("Location: ./dashboard.php");
+	exit();
 ?>

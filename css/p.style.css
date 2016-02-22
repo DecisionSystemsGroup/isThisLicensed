@@ -44,11 +44,12 @@ footer a:link, footer a:active, footer a:visited{
 .get-image .alert{
     margin: 20px;
 }
+
 .dropzone {
     #border: 2px dashed #444;
     border: 0px;
     min-height: 300px;
-    color: #555;
+    color: #fff;
     background-color: #272629;
     border-radius: 0px;
     min-height: 50px;
@@ -99,24 +100,25 @@ footer a:link, footer a:active, footer a:visited{
 .header h1{
     color: #ddd;
 }
-#get-results{
+#get-results, #dashboard-results{
     padding: 20px;
     background-color: rgba(200,200,200, 0.5);
 }
-#get-results .title, #get-results .license{
+#get-results .title, #get-results .license, #dashboard-results .title, #dashboard-results .license{
     text-align: center;
     padding: 5px;
     background-color: #272629;
     color:#ccc;
     border-bottom: 1px solid #333;
 }
-#get-results .btn{
+#get-results .btn,#dashboard-results .btn {
     width:100%;
 }
-#get-results .btn-default{
+#get-results .btn-default, #dashboard-results .btn-default{
     border: 0px;
     border-radius: 0px;
 }
+
 #get-loader i{
     margin-left: auto;
     margin-right: auto;
@@ -125,5 +127,6 @@ footer a:link, footer a:active, footer a:visited{
     padding: 150px 20px;
 }
 .dropdown-menu img{
+    background-color: #272629;
     height:30px;
 }
