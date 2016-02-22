@@ -267,3 +267,18 @@ footer img:hover{
 #dashboard-results .col-md-4{
     margin-bottom: 20px;
 }
+#get-results h1{
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 700;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 5px solid #ccc;
+}
+#get-results span{
+	text-align: center;
+	font-size: 20px;
+}
