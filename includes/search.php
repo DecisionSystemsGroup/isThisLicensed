@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1>How it works</h1>
 			<p>
-				Upload an image or give us an image url below, and we will check if this image is licensed somewhere in the Web!
+				Upload an image or give us an image url below, and we will check if this image is licensed in the flickr!
 			</p>
 		</div>
 		<div class="get-image">
@@ -61,7 +61,7 @@
 		
 		<div id="info">
 			<p>
-				Are you a content creator? See <a href="import.php">here</a> how you can import you images to isThisLicensed and declare licenses for them. This way you are making sure that when a user search an image of yours, the correct license appear.
+				Are you a content creator? Login <a href="flickrImport.php">here</a> with your flickr account and import you images to isThisLicensed. This way you are making sure that when a user search an image of yours, the correct license appear.
 			</p>
 		</div>		
 	</div>
