@@ -267,6 +267,20 @@ footer img:hover{
 #dashboard-results .col-md-4{
     margin-bottom: 20px;
 }
+#dashboard-results a{
+	width: 100%;
+	display: block;
+	text-align:center;
+	background-color: #272629;
+	padding: 10px;
+	font-size: 20px;
+}
+#dashboard-results a.thumbnail{
+	width: 100%;
+	display:block;
+	margin: -10px 0px;
+	text-align:center;
+}
 #get-results h1{
 	width: 450px;
 	margin-left: auto;
