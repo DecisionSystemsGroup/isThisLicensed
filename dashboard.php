@@ -67,7 +67,22 @@
 				</div>	
 					<?php
 						}
-					?>			
+						else{
+					?>		
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<a href="flickrImport.php" role="button" class="btn btn-default btn-block">
+						  Import My images <i class="fa fa-cloud-download"></i>
+						</a>
+					</div>
+					<br>
+					<div class="col-md-6 col-md-offset-3 text-center">
+						(Might take a while <i class="fa fa-smile-o"></i> )
+					</div>
+				</div>
+				<?php
+					}
+				?>
 				<div class="row">
 					<h1 align = "center" >My Items</h1>
 					<?php

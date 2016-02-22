@@ -21,12 +21,23 @@
 				echo "<li><a href = \"dashboard.php\" >Dashboard</a></li>";
 			}
 		?>
+		<?php
+			if(isset($_SESSION['flickr_user_token'])&&isset($_SESSION['nsid'])){
+		?>
+			<li><a href = "logout.php">Logout</a></li>
+		<?php
+			}
+			else{
+		?>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Import <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="flickrImport.php"><img src="img/fr.png">via Flickr</a></li>
+            <li><a href="flickrImport.php"><img src="img/fr.png">with Flickr</a></li>
           </ul>
-        </li>       
+        </li>
+		<?php
+			}
+		?>
       </ul>
     </div>
   </div><!-- /.container-fluid -->
