@@ -106,10 +106,20 @@ var licenses = [{
 {
 	"type": "No known copyright restrictions",
 	"url": "http://flickr.com/commons/usage/",
-	"img": "http://i.creativecommons.org/p/mark/1.0/88x31.png"
+	"img": "http://169.45.235.85/img/nc.png"
 },
 {
 	"type": "United States Government Work",
 	"url": "http://www.usa.gov/copyright.shtml",
 	"img": "http://169.45.235.85/img/usa.png"
+},
+{
+	"type": "Public Domain Work",
+	"url": "https://creativecommons.org/publicdomain/mark/1.0/",
+	"img": "http://i.creativecommons.org/p/mark/1.0/88x31.png"
+},
+{
+	"type": "Public Domain Dedication (CC0)",
+	"url": "https://creativecommons.org/publicdomain/zero/1.0/",
+	"img": "http://i.creativecommons.org/p/zero/1.0/88x31.png"
 }];
