@@ -83,7 +83,7 @@
 				    		<img src="<?php echo $licenses[$item['license']]['img'] ?>" alt = "">
 				    	</a>
 				    </div>
-				    <a class="btn btn-default btn-block" href="<?php echo "https://www.flickr.com/photos/".$item['system_creator_id']."/".$item['system_id']; ?>" target="_blank">Original Location</a>
+				    <a href="<?php echo "https://www.flickr.com/photos/".$item['system_creator_id']."/".$item['system_id']; ?>" target="_blank">Original Location</a>
 				  </div>
 				  <?php
 				  }
