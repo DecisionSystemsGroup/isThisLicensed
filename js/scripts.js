@@ -19,8 +19,12 @@ function init(){
 }
 function showSearchResults(resp){
 	var item;
+	if(resp['hits'].length<1 || !resp['success']){
+		$("#get-results>.row").append("<div class=\"col-md-4 col-md-offset-4\"><img src=\"img/sad.png\" class=\"img-responsive\"><span class=\"text-center\">No matches found</span></div>");
+		return;
+	}
 	for(var i=0;i<resp['hits'].length;i++){
-		item = $("<div class=\"col-md-4\"></div>");
+		item = $(resp['hits'].length==1?"<div class=\"col-md-4 col-md-offset-4\"></div>":"<div class=\"col-md-4\"></div>");
 		$(item).append("<a href=\""+resp['hits'][i]['url']+"\" target=\"_blank\"><img src=\""+resp['hits'][i]['url']+"\" alt=\""+resp['hits'][i]['title']+"\" class=\"img-responsive\"></a>");
 		$(item).append("<div class=\"title\">"+resp['hits'][i]['image_title']+"</div>");
 		$(item).append("<div class=\"license\"><a href=\""+licenses[resp['hits'][i]['license']]['url']+"\" target=\"_blank\"><img src=\""+licenses[resp['hits'][i]['license']]['img']+"\"></div>");
@@ -66,7 +70,8 @@ $(document).ready(function(){
 });
 var licenses = [{
 	"type": "All Rights Reserved",
-	"img": "http://169.45.235.85/img/copy.png"
+	"img": "http://169.45.235.85/img/copy.png",
+	"url": "#"
 },
 {
 	"type": "Attribution-NonCommercial-ShareAlike License",
