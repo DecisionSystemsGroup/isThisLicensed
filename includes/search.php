@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1>How it works</h1>
 			<p>
-				Upload an image or give us an image url below, and we will check if this image is licensed in the flickr!
+				Upload an image or give us an image url below, and we will check if this image is indexed with us!
 			</p>
 		</div>
 		<div class="get-image">
