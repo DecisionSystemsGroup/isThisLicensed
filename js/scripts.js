@@ -22,7 +22,7 @@ function showSearchResults(resp){
 		$(item).append("<a href=\""+resp['hits'][i]['url']+"\" target=\"_blank\"><img src=\""+resp['hits'][i]['url']+"\" alt=\""+resp['hits'][i]['title']+"\" class=\"img-responsive\"></a>");
 		$(item).append("<div class=\"title\">"+resp['hits'][i]['image_title']+"</div>");
 		$(item).append("<div class=\"license\"><a href=\""+licenses[resp['hits'][i]['license']]['url']+"\" target=\"_blank\"><img src=\""+licenses[resp['hits'][i]['license']]['img']+"\"></div>");
-		$(item).append("<a class=\"btn btn-default btn-block\" href=\""+"https://www.flickr.com/photos/"+resp['hits'][i]['system_creator_id']+"/"+resp['hits'][i]['system_id']+"\" target=\"_blank\">Original Location</a>");
+		$(item).append("<a href=\""+"https://www.flickr.com/photos/"+resp['hits'][i]['system_creator_id']+"/"+resp['hits'][i]['system_id']+"\" target=\"_blank\">Original Location</a>");
 		
 		$("#get-results>.row").append(item);
 	}
