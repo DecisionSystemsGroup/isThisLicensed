@@ -16,7 +16,7 @@
 		  <!-- Tab panes -->
 		  <div class="tab-content">
 		    <div role="tabpanel" class="tab-pane active" id="dropzone">
-				<form action="upload.php" method="post" class="dropzone" id="image-upload">
+				<form action="upload.php" method="post" id="image-upload">
 					<div class="dz-message needsclick">
 						Drop files here, or click to upload <br />
 					    <i class="fa fa-cloud-upload fa-5x"></i>
@@ -56,30 +56,6 @@
 		<div id="get-results">
 			<div class="row">
 				<h1 text-align="center">Possible Sources</h1>
-			  <!--div class="col-md-4">
-			    <a href="#" class="thumbnail">
-			      <img src="http://169.45.235.85/uploads/Courses.png" alt="">
-			    </a>			    
-			    <div class="title">Title</div>
-			    <div class="license">License</div>
-			    <button class="btn btn-default btn-block">Original Location</button>
-			  </div>
-			  <div class="col-md-4">
-			    <a href="#" class="thumbnail">
-			      <img src="http://169.45.235.85/uploads/Courses.png" alt="">
-			    </a>			    
-			    <div class="title">Title</div>
-			    <div class="license">License</div>
-			    <button class="btn btn-default btn-block">Original Location</button>
-			  </div>  
-			  <div class="col-md-4">
-			    <a href="#" class="thumbnail">
-			      <img src="http://169.45.235.85/uploads/Courses.png" alt="">
-			    </a>			    
-			    <div class="title">Title</div>
-			    <div class="license"><a href=""><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" /></a></div>
-			    <button class="btn btn-default btn-block">Original Location</button>
-			  </div-->
 			</div>
 		</div>
 		

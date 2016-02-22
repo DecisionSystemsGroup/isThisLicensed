@@ -1,9 +1,3 @@
-/*function ifValUrl(url){
-	if(url.indexOf('http://')<0){
-		url = 'http://'+url;
-	}
-	return /^https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|png)$/.test(url);
-}*/
 function addHttp(url){
 	url = (url.indexOf('://') == -1) ? 'http://' + url : url;
 	return url;
@@ -19,7 +13,7 @@ function init(){
 }
 function showSearchResults(resp){
 	var item;
-	if(resp['hits'].length<1 || !resp['success']){
+	if(!resp['success'] || resp['hits'].length<1){
 		$("#get-results>.row").append("<div class=\"col-md-4 col-md-offset-4\"><img src=\"img/sad.png\" class=\"img-responsive\"><span class=\"text-center\">No matches found</span></div>");
 		return;
 	}
@@ -33,7 +27,18 @@ function showSearchResults(resp){
 		$("#get-results>.row").append(item);
 	}
 }
-$(document).ready(function(){
+
+$(document).ready(function(){ 
+	var myDropzone = new Dropzone("#image-upload");
+	myDropzone.on("complete", function(resp) {
+		$("#get-loader").hide();
+		$("#get-results").show();
+		showSearchResults(JSON.parse(resp.xhr.response));
+	});
+	myDropzone.on("sending", function(resp) {
+		$(".get-image").hide();
+		$("#get-loader").show();
+	});
 	init();
 	$("#image-url").val("");
 	$("#image-url").on("focus", function(){
@@ -71,7 +76,7 @@ $(document).ready(function(){
 var licenses = [{
 	"type": "All Rights Reserved",
 	"img": "http://169.45.235.85/img/copy.png",
-	"url": "#"
+	"url": "https://en.wikipedia.org/wiki/Copyright"
 },
 {
 	"type": "Attribution-NonCommercial-ShareAlike License",
